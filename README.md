@@ -1,0 +1,9 @@
+The Deflate algorithm is a widely used data compression algorithm that combines two main techniques: LZ77 (Lempel-Ziv 1977) and Huffman coding. 
+
+1. **LZ77**: This is a dictionary-based compression algorithm that replaces repeated occurrences of data with references to a previous occurrence of that data. It works by scanning the input data for sequences of characters that have already appeared earlier in the input stream. Instead of storing the repeated sequence again, LZ77 represents it as a pair (distance, length), where 'distance' refers to how far back in the input the previous occurrence was found, and 'length' indicates how many characters to copy from that position. LZ77 helps in eliminating redundancy by referencing previously seen data.
+
+2. **Huffman Coding**: Huffman coding is a technique used for lossless data compression. It assigns variable-length codes to input characters, with shorter codes assigned to more frequent characters and longer codes assigned to less frequent characters. This way, the most common characters are represented using fewer bits, resulting in overall compression. Huffman coding builds a binary tree of nodes where the leaves represent the input characters and internal nodes represent merged characters. The paths from the root to each leaf node determine the binary code for each character.
+
+In the Deflate algorithm, LZ77 is used to find repetitive patterns in the input data, which are then replaced with references, reducing redundancy. After LZ77 compression, Huffman coding is applied to further compress the data by encoding frequent patterns with shorter bit sequences. 
+
+So, to summarize, LZ77 identifies repeated patterns, and Huffman coding assigns variable-length codes to these patterns based on their frequency, resulting in efficient compression within the Deflate algorithm.
